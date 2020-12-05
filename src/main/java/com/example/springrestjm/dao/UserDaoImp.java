@@ -2,7 +2,10 @@ package com.example.springrestjm.dao;
 
 import com.example.springrestjm.model.Role;
 import com.example.springrestjm.model.User;
+import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.client.RestTemplate;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,34 +19,39 @@ import java.util.Set;
 public class UserDaoImp implements UserDao {
 
 
-   @PersistenceContext
+//   @PersistenceContext
+   @Autowired
    private EntityManager entityManager;
-
 
    //Success +
    @Override
    @SuppressWarnings("unchecked")
-   public List<User> listAllUsers() {
-      return entityManager.createQuery("FROM User").getResultList();
+   public List<User> getAllUsers() {
+      Session session = entityManager.unwrap(Session.class);
+      return session.createQuery("FROM User").getResultList();
    }
+
 
    //Success +
    @Override
-   public void add(User user) {
-      if(user.getId() == null) {
+   public void addUser(User user) {
          entityManager.persist(user);
-      } else entityManager.merge(user);
+   }
+
+   @Override
+   public void updateUser(User user){
+      entityManager.merge(user);
    }
 
    //Success +
    @Override
-   public void delete(int id) {
+   public void deleteUserById(int id) {
       entityManager.remove(entityManager.find(User.class, (long)id));
    }
 
    //Success +
    @Override
-   public User showUser(int id) {
+   public User getUserById(int id) {
       return entityManager.find(User.class, (long)id);
    }
 

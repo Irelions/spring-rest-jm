@@ -20,7 +20,7 @@ public class Role implements GrantedAuthority {
     @Column(name = "role")
     private String role;
 
-//    @Transient
+    @Transient
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
@@ -68,5 +68,14 @@ public class Role implements GrantedAuthority {
     @Override
     public String getAuthority() {
         return role;
+    }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "id=" + id +
+                ", role='" + role + '\'' +
+                ", users=" + users +
+                '}';
     }
 }

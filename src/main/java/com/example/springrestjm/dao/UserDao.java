@@ -9,10 +9,13 @@ import java.util.List;
 import java.util.Set;
 
 public interface UserDao {
-   List<User> listAllUsers();
-   void add(User user);
-   void delete(int id);
-   User showUser (int id);
+   List<User> getAllUsers();
+   User getUserById (int id);
+   void addUser(User user);
+   void deleteUserById(int id);
+   void updateUser(User user);
+
+
    List<User> findUserByUsername(String username);
    User getUserByName(String name);
    List<Role> allRoles();

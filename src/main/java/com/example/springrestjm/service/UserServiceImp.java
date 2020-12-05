@@ -19,20 +19,27 @@ public class UserServiceImp implements UserService {
 
     //Success +
     @Override
-    public List<User> listUsers() {
-        return userDao.listAllUsers();
+    public List<User> getAllUsers() {
+        return userDao.getAllUsers();
+    }
+
+
+
+    //Success +
+    @Override
+    public void addUser(User user) {
+        userDao.addUser(user);
+    }
+
+    @Override
+    public void updateUser(User user) {
+        userDao.updateUser(user);
     }
 
     //Success +
     @Override
-    public void add(User user) {
-        userDao.add(user);
-    }
-
-    //Success +
-    @Override
-    public void delete(int id) {
-        userDao.delete(id);
+    public void deleteUserById(int id) {
+        userDao.deleteUserById(id);
     }
 
     //Success +
@@ -43,8 +50,8 @@ public class UserServiceImp implements UserService {
 
     //Success +
     @Override
-    public User showUser(int id) {
-        return userDao.showUser(id);
+    public User getUserById(int id) {
+        return userDao.getUserById(id);
     }
 
 
@@ -52,7 +59,7 @@ public class UserServiceImp implements UserService {
     public User getUserByName(String name) {
         return userDao.getUserByName(name);
     }
-
+//
     @Override
     public List<Role> allRoles() {
         return userDao.allRoles();

@@ -9,12 +9,15 @@ import java.util.Set;
 
 @Service
 public interface UserService {
-    void add(User user);
-    List<User> listUsers();
-    User showUser (int id);
-    void delete(int id);
-    List<User> findUserByUsername(String username);
     User getUserByName(String name);
+    List<User> getAllUsers();
+    User getUserById(int id);
+    void addUser(User user);
+    void updateUser(User user);
+
+    void deleteUserById(int id);
+    List<User> findUserByUsername(String username);
+
     List<Role> allRoles();
     Set<Role> allRolesString();
 }
