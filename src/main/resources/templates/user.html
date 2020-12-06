@@ -9,7 +9,7 @@
 <!--footer-->
 <div class="row bg-dark text-white p-2">
     <div class="col-md-6 text-left px-3 py-2">
-        <span class="font-weight-bold m-0 p-0">USER email</span> with roles: <span class="text-uppercase m-0 p-0">USER roles</span>
+        <span id="footerEmail" class="font-weight-bold m-0 p-0"></span> with roles: <span id="footerRoles" class="text-uppercase m-0 p-0"></span>
     </div>
     <div class="col-md-6 text-right"><a class="nav-link text-light" href="/logout">Logout</a></div>
 </div>
@@ -19,7 +19,7 @@
         <!--    left panel-->
         <div class="col-md-2 p-0 pt-3 bg-white">
             <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
+                <li id="adminLinkPanel" class="nav-item">
                     <a class="nav-link " href="/admin">Admin</a>
                 </li>
                 <li class="nav-item">
@@ -47,15 +47,8 @@
                                     <th>Role</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>name</td>
-                                    <td>lastname</td>
-                                    <td>department</td>
-                                    <td>email</td>
-                                    <td>email</td>
-                                </tr>
+                                <tbody id="mainTableBodyUser">
+<!--                                    Content User Table-->
                                 </tbody>
                             </table>
                         </div>
@@ -68,5 +61,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="js/user.js"></script>
 </body>
 </html>

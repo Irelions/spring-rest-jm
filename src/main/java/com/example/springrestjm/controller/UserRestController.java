@@ -19,21 +19,14 @@ public class UserRestController {
 	@Autowired
 	private UserService userService;
 
-//	Saccess +
-//	@GetMapping("admin")
-//	public @ResponseBody List<User> showAllUsers(){
-//		List<User> allUsers = userService.getAllUsers();
-//		return allUsers;
-//	}
-
-	//test v1.0
+	//Saccess+
 	@GetMapping(value = "allUsers", headers="Accept=application/json")
 	public List<User> showAllUsers(){
 		 List<User> allUsers = userService.getAllUsers();
 		return allUsers;
 	}
 
-//	Saccess +
+	//Saccess +
 	@GetMapping("showUser")
 	@ResponseBody
 	public User showUser(@AuthenticationPrincipal org.springframework.security.core.userdetails.User user_authentication){
