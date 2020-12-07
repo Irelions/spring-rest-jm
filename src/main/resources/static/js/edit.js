@@ -1,27 +1,21 @@
 
-
-const allUsersURL = `http://localhost:8080/user/${userId}`;
 function func(userId){
-    alert("Edit")
+    console.log(userId)
+const userByIdURL = `http://localhost:8080/user/${userId}`
+
+    fetch(userByIdURL)
+        .then(response => response.json())
+        .then(user => {
+            $('#userIdEdit').attr('value', `${user.id}`)
+            $('#userNameEdit').attr('value', `${user.firstName}`)
+            $('#userLastnameEdit').attr('value', `${user.lastName}`)
+            $('#userDepartmentEdit').attr('value', `${user.department}`)
+            $('#userEmailEdit').attr('value', `${user.email}`)
+            $('#userLoginEdit').attr('value', `${user.username}`)
+            $('#userPasswordEdit').attr('value', `${user.password}`)
+            $('#editUserRole').attr('value', `${user.rolesToString}`)
+
+
+            // $('#mainTableBodyUser').append(temp)
+        })
 }
-fetch(allUsersURL)
-    .then(response => response.json())
-    .then(result => {
-        for (let user of result) {
-            let temp = `<tr id="row-${user.id}">
-                    <td>${user.id}</td>
-                    <td>${user.firstName}</td>
-                    <td>${user.lastName}</td>
-                    <td>${user.department}</td>
-                    <td>${user.email}</td>
-                    <td>${user.rolesToString}</td>
-                    <td>
-                        <button class="btn btn-info" type="button" data-toggle="modal" data-target=#modalEditView value=${user.id}}>Edit</button>
-                    </td>
-                    <td>
-                        <button class="btn btn-danger" type="button" data-toggle="modal" data-target=#userDeleteID-${user.id}>Delete</button>
-                    </td>
-                </tr>`
-            $('#mainTableBodyUsers').append(temp)
-        }
-    })
