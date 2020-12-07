@@ -118,6 +118,72 @@
     </div>
 </div>
 
+<!--Modal EDIT-->
+<div id="modalEditView" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!--            Modal Header-->
+            <div class="modal-header">
+                <h4 class="modal-title">Edit user</h4>
+                <button type="button" class="close" data-dismiss="modal">x</button>
+            </div>
+
+            <!--            Modal body-->
+            <div class="modal-body">
+                <div class="container-fluid py-3 bg-white" >
+                    <form class="mx-auto text-center" style="width: 380px" method="POST"
+                          action="/add" name="id">
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="userIdEdit">ID</label>
+                            <input class="form-control" type="text" id="userIdEdit" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="userNameEdit">First name</label>
+                            <input type="text" class="form-control" id="userNameEdit" name="firstName" required/>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="userLastnameEdit">Last name</label>
+                            <input type="text" class="form-control" id="userLastnameEdit" name="lastName" required/>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="userDepartmentEdit">Department</label>
+                            <input type="text" class="form-control" id="userDepartmentEdit" name="department"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="userEmailEdit">Email</label>
+                            <input type="text" class="form-control" id="userEmailEdit" name="email"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="userLoginEdit">Login</label>
+                            <input type="text" class="form-control" id="userLoginEdit" name="username" required/>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="userPasswordEdit">Password</label>
+                            <input type="text" class="form-control" id="userPasswordEdit" name="password" required/>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="editUserRole">Role</label>
+                            <select id="editUserRole" class="form-control"  name="roles"  multiple required>
+<!--                                <option th:each="role : ${allRoles}"-->
+<!--                                        th:value="${role.role}"-->
+<!--                                        th:text="${role.role}">-->
+<!--                                </option>-->
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <!--            Modal footer-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-info" name="id">Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>

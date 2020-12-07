@@ -1,5 +1,9 @@
-const allUsersURL = 'http://localhost:8080/allUsers';
 
+
+const allUsersURL = `http://localhost:8080/user/${userId}`;
+function func(userId){
+    alert("Edit")
+}
 fetch(allUsersURL)
     .then(response => response.json())
     .then(result => {
@@ -12,7 +16,7 @@ fetch(allUsersURL)
                     <td>${user.email}</td>
                     <td>${user.rolesToString}</td>
                     <td>
-                        <button class="btn btn-info" onclick=\`func(${user.id}})\` type="button" data-toggle="modal" data-target=#modalEditView value=${user.id}}>Edit</button>
+                        <button class="btn btn-info" type="button" data-toggle="modal" data-target=#modalEditView value=${user.id}}>Edit</button>
                     </td>
                     <td>
                         <button class="btn btn-danger" type="button" data-toggle="modal" data-target=#userDeleteID-${user.id}>Delete</button>
