@@ -45,7 +45,7 @@
                     <!--Users table TAB-->
                     <div id="usersTable" class="container-fluid tab-pane active">
                         <h4 class="m-2">All users</h4>
-                        <div class="container-fluid bg-white py-1">
+                        <div  class="container-fluid bg-white py-1">
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
@@ -77,11 +77,11 @@
                                 <input hidden type="text" name="id" id="newUserId"/>
                                 <div class="form-group">
                                     <label class="font-weight-bold m-0" for="newUserName">First name</label>
-                                    <input type="text" class="form-control bg-warning" name="firstName" id="newUserName" required/>
+                                    <input id="newUserName" type="text" class="form-control bg-warning" name="firstName"  required/>
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold m-0" for="newUserLastname">Last name</label>
-                                    <input type="text" class="form-control bg-warning" name="lastName" id="newUserLastname" required/>
+                                    <input id="newUserLastname" type="text" class="form-control bg-warning" name="lastName"  required/>
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold m-0" for="newUserDepartment">Department</label>
@@ -133,8 +133,7 @@
             <!--            Modal body-->
             <div class="modal-body">
                 <div class="container-fluid py-3 bg-white" >
-                    <form class="mx-auto text-center" style="width: 380px" method="POST"
-                          action="/add" name="id">
+                    <form class="mx-auto text-center" style="width: 380px" name="id">
                         <div class="form-group">
                             <label class="font-weight-bold m-0" for="userIdEdit">ID</label>
                             <input class="form-control" type="text" id="userIdEdit" readonly/>
@@ -185,6 +184,65 @@
     </div>
 </div>
 
+<!--Modal DELETE-->
+<div id="modalDeleteView" class="modal" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!--            Modal Header-->
+            <div class="modal-header">
+                <h4 class="modal-title">Delete user</h4>
+                <button type="button" class="close" data-dismiss="modal">x</button>
+            </div>
+
+            <!--            Modal body-->
+            <div class="modal-body">
+                <div class="container-fluid py-3 bg-white" >
+                    <form class="mx-auto text-center" style="width: 380px" name="id">
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="userIdDelete">ID</label>
+                            <input type="text" class="form-control" id="userIdDelete" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="userFirstNameDelete">First name</label>
+                            <input type="text" class="form-control" id="userFirstNameDelete" name="firstName" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="userLastnameDelete">Last name</label>
+                            <input type="text" class="form-control" id="userLastnameDelete" name="lastName" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="userDepartmentDelete">Department</label>
+                            <input type="text" class="form-control" id="userDepartmentDelete" name="department" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="userEmailDelete">Email</label>
+                            <input type="text" class="form-control" id="userEmailDelete" name="email" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="userLoginDelete">Login</label>
+                            <input type="text" class="form-control" id="userLoginDelete" name="username" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="userPasswordDelete">Password</label>
+                            <input type="text" class="form-control" id="userPasswordDelete" name="password" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold m-0" for="userRoleDelete">Role</label>
+                            <input type="text" class="form-control" id="userRoleDelete" readonly/>
+                        </div>
+                    </form>
+                </div>
+
+                <!--            Modal footer-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                    <button type="submit"  onclick=deleteUser() class="btn btn-danger" name="id">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>

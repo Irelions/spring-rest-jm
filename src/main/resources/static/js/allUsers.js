@@ -3,6 +3,7 @@ const allUsersURL = 'http://localhost:8080/allUsers'
 showAllUsers()
 
 function showAllUsers() {
+    console.log("showAllUsers activated")
     fetch(allUsersURL)
         .then(response => response.json())
         .then(result => {
@@ -15,11 +16,10 @@ function showAllUsers() {
                     <td>${user.email}</td>
                     <td>${user.rolesToString}</td>
                     <td>
-<!--                        <button class="btn btn-info" onclick=funct(${user.id}) type="button">Edit</button>-->
                         <button class="btn btn-info" onclick=func(${user.id}) type="button" data-toggle="modal" data-target=#modalEditView>Edit</button>
                     </td>
                     <td>
-                        <button class="btn btn-danger" onclick=deleteUser(${user.id}) type="button" data-toggle="modal" data-target=#userDeleteID-${user.id}>Delete</button>
+                        <button class="btn btn-danger" onclick=showDeleteUser(${user.id}) type="button" data-toggle="modal" data-target=#modalDeleteView>Delete</button>
                     </td>
                 </tr>`
                 $('#mainTableBodyUsers').append(temp)
