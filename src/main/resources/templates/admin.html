@@ -102,14 +102,10 @@
                                 <div class="form-group">
                                     <label class="font-weight-bold m-0" for="newUserRole">Role</label>
                                     <select id="newUserRole" class="form-control"  name="roles"  multiple>
-<!--                                        <option th:each="role : ${allRoles}"-->
-<!--                                                th:value="${role.role}"-->
-<!--                                                th:text="${role.role}">-->
-<!--                                        </option>-->
+<!--                                        Content Selector-->
                                     </select>
                                 </div>
-                                <input class="btn btn-success" onclick=addNewUser() type="submit" value="Add new user"/>
-<!--                                <button class="btn btn-success" onclick=addNewUser()>"Add new user"</button>-->
+                                <input id="btnAddUser" class="btn btn-success" onclick=addNewUser() type="submit" value="Add new user"/>
                             </form>
                         </div>
                     </div>
@@ -165,10 +161,7 @@
                         <div class="form-group">
                             <label class="font-weight-bold m-0" for="editUserRole">Role</label>
                             <select id="editUserRole" class="form-control"  name="roles"  multiple required>
-<!--                                <option th:each="role : ${allRoles}"-->
-<!--                                        th:value="${role.role}"-->
-<!--                                        th:text="${role.role}">-->
-<!--                                </option>-->
+<!--                                Content Selector-->
                             </select>
                         </div>
                     </form>
@@ -177,7 +170,7 @@
                 <!--            Modal footer-->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-info" name="id">Edit</button>
+                    <button id="btnEdit" type="submit" class="btn btn-info" name="id" data-dismiss="modal">Edit</button>
                 </div>
             </div>
         </div>
@@ -252,5 +245,6 @@
 <script src="js/user.js"></script>
 <script src="js/allUsers.js"></script>
 <script src="js/delete.js"></script>
+<script src="js/roles.js"></script>
 </body>
 </html>

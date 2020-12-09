@@ -12,7 +12,7 @@ function showDeleteUser(userId) {
             $('#userLoginDelete').attr('value', `${user.username}`)
             $('#userPasswordDelete').attr('value', `${user.password}`)
             $('#userRoleDelete').attr('value', `${user.rolesToString}`)
-            $('#btnDelete').attr('onclick', deleteUser(`${user.id}`))
+            $('#btnDelete').attr('onclick', `deleteUser(${user.id})`)
         })
 }
 

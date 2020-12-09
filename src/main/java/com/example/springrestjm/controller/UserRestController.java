@@ -1,6 +1,7 @@
 package com.example.springrestjm.controller;
 
 
+import com.example.springrestjm.model.Role;
 import com.example.springrestjm.model.User;
 import com.example.springrestjm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,6 +65,12 @@ public class UserRestController {
 		userService.updateUser(user);
 		List<User> allUsers = userService.getAllUsers();
 		return allUsers;
+	}
+
+	@GetMapping("admin/roles")
+	public List<Role> allRoles() {
+		List<Role> allRoles = userService.allRoles();
+		return allRoles;
 	}
 
 //	//Success +

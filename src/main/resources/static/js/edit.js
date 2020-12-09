@@ -1,4 +1,3 @@
-
 function func(userId){
     console.log(userId)
 const userByIdURL = `http://localhost:8080/user/${userId}`
@@ -14,18 +13,30 @@ const userByIdURL = `http://localhost:8080/user/${userId}`
             $('#userLoginEdit').attr('value', `${user.username}`)
             $('#userPasswordEdit').attr('value', `${user.password}`)
             $('#editUserRole').attr('value', `${user.rolesToString}`)
-
-
-            // $('#mainTableBodyUser').append(temp)
+            $('#btnEdit').attr('onclick', `editUser()`)
         })
-
 }
 function editUser(){
     const editUserURL = 'http://localhost:8080/admin/add'
+    $('#editUserRole').attr('value', [])
     console.log("editUser activated")
     fetch(editUserURL,{
         method: 'PUT',
-        body: JSON.stringify(body),
-        headers: {'Content-type': 'application/json; charset=UTF-8'}
+        body: JSON.stringify({
+            id: $('#userIdEdit').val(),
+            firstName: $('#userNameEdit').val(),
+            lastName: $('#userLastnameEdit').val(),
+            department: $('#userDepartmentEdit').val(),
+            email: $('#userEmailEdit').val(),
+            username: $('#userLoginEdit').val(),
+            password: $('#userPasswordEdit').val(),
+            roles: [
+                {
+                    id: parseInt($('#editUserRole').val()[0])
+                }
+            ]
+        }),
+        headers: {'Content-type': 'application/json; charset=UTF-8'},
+
     })
 }
