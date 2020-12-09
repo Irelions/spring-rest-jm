@@ -19,7 +19,7 @@ function showAllUsers() {
                         <button class="btn btn-info" onclick=func(${user.id}) type="button" data-toggle="modal" data-target=#modalEditView>Edit</button>
                     </td>
                     <td>
-                        <button class="btn btn-danger" onclick=showDeleteUser(${user.id}) type="button" data-toggle="modal" data-target=#modalDeleteView>Delete</button>
+                        <button class="btn btn-danger" onclick="showDeleteUser(${user.id})" type="button" data-toggle="modal" data-target=#modalDeleteView>Delete</button>
                     </td>
                 </tr>`
                 $('#mainTableBodyUsers').append(temp)

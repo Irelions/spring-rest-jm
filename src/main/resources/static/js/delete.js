@@ -1,8 +1,6 @@
-const userByIdURL = `http://localhost:8080/admin/delete/${userId}`
 
 function showDeleteUser(userId) {
-
-
+    const userByIdURL = `http://localhost:8080/user/${userId}`
     fetch(userByIdURL)
         .then(response => response.json())
         .then(user => {
@@ -14,16 +12,15 @@ function showDeleteUser(userId) {
             $('#userLoginDelete').attr('value', `${user.username}`)
             $('#userPasswordDelete').attr('value', `${user.password}`)
             $('#userRoleDelete').attr('value', `${user.rolesToString}`)
+            $('#btnDelete').attr('onclick', deleteUser(`${user.id}`))
         })
-
-
 }
+
 function deleteUser(userId){
-    console.log("deleteUser activated")
+    const userByIdURL = `http://localhost:8080/admin/delete/${userId}`
+    console.log('deleteUser activated')
     fetch(userByIdURL,{
         method: 'DELETE'
     })
-
     $(`#row-${userId}`).remove()
-    // showAllUsers()
 }

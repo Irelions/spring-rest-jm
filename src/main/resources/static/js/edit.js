@@ -18,4 +18,14 @@ const userByIdURL = `http://localhost:8080/user/${userId}`
 
             // $('#mainTableBodyUser').append(temp)
         })
+
+}
+function editUser(){
+    const editUserURL = 'http://localhost:8080/admin/add'
+    console.log("editUser activated")
+    fetch(editUserURL,{
+        method: 'PUT',
+        body: JSON.stringify(body),
+        headers: {'Content-type': 'application/json; charset=UTF-8'}
+    })
 }
